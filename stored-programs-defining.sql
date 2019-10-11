@@ -15,3 +15,13 @@ DELIMITER ;
 -- ストアドプロシージャの実行
 CALL dorepeat(1000);
 SELECT @x;
+
+
+-- ストアドファンクションの登録
+CREATE FUNCTION hello (s CHAR(20))
+RETURNS CHAR(50) DETERMINISTIC
+RETURN CONCAT('Hello, ',s,'!');
+
+-- ストアドファンクションの実行
+SELECT hello('world');
+
